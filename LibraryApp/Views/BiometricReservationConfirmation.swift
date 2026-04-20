@@ -68,7 +68,13 @@ struct BiometricReservationConfirmation: View {
                                 reservationDetailRow(
                                     icon: "calendar",
                                     label: "Reservation Time",
-                                    value: getCurrentTime()
+                                    value: getFormattedReservationTime()
+                                )
+                                
+                                reservationDetailRow(
+                                    icon: "tent",
+                                    label: "Pickup By",
+                                    value: getFormattedReservationExpiry()
                                 )
                                 
                                 reservationDetailRow(
@@ -187,6 +193,21 @@ struct BiometricReservationConfirmation: View {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         return formatter.string(from: Date())
+    }
+    
+    private func getFormattedReservationTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: Date())
+    }
+    
+    private func getFormattedReservationExpiry() -> String {
+        let reservedUntil = Calendar.current.date(byAdding: .hour, value: 2, to: Date())
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: reservedUntil)
     }
 }
 

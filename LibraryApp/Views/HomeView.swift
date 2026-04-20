@@ -402,9 +402,13 @@ struct HomeView: View {
                     color: AppTheme.Colors.reserved,
                     small: true
                 )
-                Text("\(reservation.daysSinceReserved)d ago")
+                Text(reservation.reservedAgoText)
                     .font(AppTheme.Fonts.caption2)
                     .foregroundColor(AppTheme.Colors.textTertiary)
+                Text(reservation.pickupByText)
+                    .font(AppTheme.Fonts.caption2)
+                    .foregroundColor(AppTheme.Colors.textSecondary)
+                    .lineLimit(1)
             }
         }
         .padding(AppTheme.Spacing.md)
