@@ -1,8 +1,11 @@
 import SwiftUI
 import SwiftData
+<<<<<<< HEAD
 import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 
 @main
 struct LibraryCompanionApp: App {
@@ -20,6 +23,10 @@ struct LibraryCompanionApp: App {
             ])
             return try ModelContainer(for: schema)
         } catch {
+<<<<<<< HEAD
+=======
+            // If container creation fails, try to delete the store and recreate
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
             do {
                 let config = ModelConfiguration()
                 let storeURL = config.url
@@ -44,20 +51,26 @@ struct LibraryCompanionApp: App {
 
     @State private var authService = AuthService()
 
+<<<<<<< HEAD
     init() {
         FirebaseApp.configure()
     }
 
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
     var body: some Scene {
         WindowGroup {
             AppRouter()
                 .environment(authService)
                 .modelContainer(container)
                 .preferredColorScheme(.light)
+<<<<<<< HEAD
                 .task {
                     // Activate Global Dual Offline-Cloud Synchronization Daemon
                     FirebaseSyncService.shared.startSyncing(context: container.mainContext)
                 }
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         }
     }
 }

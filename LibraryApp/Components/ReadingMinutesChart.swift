@@ -21,7 +21,11 @@ struct ReadingMinutesChart: View {
                     x: .value("Day", point.day, unit: .day),
                     y: .value("Minutes", point.minutes)
                 )
+<<<<<<< HEAD
                 .foregroundStyle(Color.accent)
+=======
+                .foregroundStyle(Color.primary)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                 .cornerRadius(4)
             }
             .chartXAxis {

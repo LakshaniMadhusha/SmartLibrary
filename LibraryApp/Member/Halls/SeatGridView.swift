@@ -22,7 +22,11 @@ struct SeatGridView: View {
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
+<<<<<<< HEAD
                                 .stroke(selectedSeat?.id == seat.id ? Color.accent : Color.clear, lineWidth: 2)
+=======
+                                .stroke(selectedSeat?.id == seat.id ? Color.primary : Color.clear, lineWidth: 2)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                         )
                 }
                 .buttonStyle(.plain)

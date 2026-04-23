@@ -1,8 +1,11 @@
 import Foundation
 import SwiftData
 import Combine
+<<<<<<< HEAD
 import FirebaseAuth
 import FirebaseFirestore
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 
 @Observable
 final class AuthService {
@@ -16,9 +19,14 @@ final class AuthService {
     private(set) var errorMessage: String?
 
     private(set) var isAppLocked = false
+<<<<<<< HEAD
     var autoLockTimeoutSeconds: TimeInterval = 0 // Instant biometrics
     private var lastBackgroundAt: Date?
     private let loggedInUserIdKey = "loggedInAppUserId"
+=======
+    var autoLockTimeoutSeconds: TimeInterval = 300
+    private var lastBackgroundAt: Date?
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 
     // Combine example: emit state changes for non-SwiftUI consumers
     private let stateSubject = CurrentValueSubject<AuthState, Never>(.signedOut)
@@ -30,6 +38,7 @@ final class AuthService {
     func bootstrap(modelContext: ModelContext) {
         do {
             try MockData.seedIfNeeded(modelContext: modelContext)
+<<<<<<< HEAD
             
             // Check native Firebase Session!
             if let userFirebase = Auth.auth().currentUser, let userEmail = userFirebase.email {
@@ -57,16 +66,25 @@ final class AuthService {
             }
         } catch {
             errorMessage = "Failed to load logic."
+=======
+        } catch {
+            errorMessage = "Failed to seed data."
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         }
     }
 
     @MainActor
+<<<<<<< HEAD
     func signIn(email: String, password: String, role: UserRole, modelContext: ModelContext) async {
+=======
+    func signIn(email: String, role: UserRole, modelContext: ModelContext) async {
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
 
         do {
+<<<<<<< HEAD
             // Real Global Network Request!
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             let uid = result.user.uid
@@ -106,16 +124,35 @@ final class AuthService {
             }
         } catch {
             errorMessage = error.localizedDescription
+=======
+            try await Task.sleep(for: .milliseconds(450))
+            let roleRaw = role.rawValue
+            let predicate = #Predicate<AppUser> { $0.email == email && $0.roleRaw == roleRaw }
+            let descriptor = FetchDescriptor<AppUser>(predicate: predicate)
+            if let user = try modelContext.fetch(descriptor).first {
+                state = .signedIn(user)
+                stateSubject.send(state)
+            } else {
+                errorMessage = "No account found for that email/role."
+            }
+        } catch {
+            errorMessage = "Sign in failed."
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         }
     }
 
     @MainActor
+<<<<<<< HEAD
     func signUp(name: String, email: String, password: String, role: UserRole, modelContext: ModelContext) async {
+=======
+    func signUp(name: String, email: String, role: UserRole, modelContext: ModelContext) async {
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
 
         do {
+<<<<<<< HEAD
             // Enterprise Network Google Creation!
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             let uid = result.user.uid
@@ -140,17 +177,31 @@ final class AuthService {
             stateSubject.send(state)
         } catch {
             errorMessage = error.localizedDescription
+=======
+            try await Task.sleep(for: .milliseconds(550))
+            let user = AppUser(name: name, email: email, role: role)
+            modelContext.insert(user)
+            try modelContext.save()
+            state = .signedIn(user)
+            stateSubject.send(state)
+        } catch {
+            errorMessage = "Sign up failed."
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         }
     }
 
     @MainActor
     func signIn(user: AppUser) {
         state = .signedIn(user)
+<<<<<<< HEAD
         UserDefaults.standard.set(user.id.uuidString, forKey: loggedInUserIdKey)
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         stateSubject.send(state)
     }
 
     func signOut() {
+<<<<<<< HEAD
         // Break network socket permanently
         try? Auth.auth().signOut()
         
@@ -158,6 +209,11 @@ final class AuthService {
         isAppLocked = false
         lastBackgroundAt = nil
         UserDefaults.standard.removeObject(forKey: loggedInUserIdKey)
+=======
+        state = .signedOut
+        isAppLocked = false
+        lastBackgroundAt = nil
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         stateSubject.send(state)
     }
 

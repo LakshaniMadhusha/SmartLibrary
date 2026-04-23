@@ -5,6 +5,7 @@ struct AppRouter: View {
     @Environment(AuthService.self) private var auth
     @Environment(\.modelContext) private var modelContext
     @Environment(\.scenePhase) private var scenePhase
+<<<<<<< HEAD
     
     @State private var showSplash: Bool = true
 
@@ -34,6 +35,26 @@ struct AppRouter: View {
                         } else {
                             LibrarianTabView(user: user)
                         }
+=======
+
+    var body: some View {
+        Group {
+            switch auth.state {
+            case .signedOut:
+                SplashView()
+                    .task { auth.bootstrap(modelContext: modelContext) }
+                    .overlay(alignment: .bottom) {
+                        AuthEntryView()
+                    }
+            case .signedIn(let user):
+                if auth.isAppLocked {
+                    AppLockView()
+                } else {
+                    if user.role == .member {
+                        MemberTabView(user: user)
+                    } else {
+                        LibrarianTabView(user: user)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                     }
                 }
             }

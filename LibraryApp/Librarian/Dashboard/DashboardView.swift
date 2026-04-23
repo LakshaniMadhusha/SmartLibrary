@@ -92,7 +92,11 @@ struct CirculationChartView: View {
                     x: .value("Day", b.day, unit: .day),
                     y: .value("Loans", b.count)
                 )
+<<<<<<< HEAD
                 .foregroundStyle(Color.accent)
+=======
+                .foregroundStyle(Color.primary)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                 .cornerRadius(4)
             }
             .frame(height: 180)

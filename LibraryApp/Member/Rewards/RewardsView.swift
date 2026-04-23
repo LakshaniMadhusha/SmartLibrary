@@ -25,7 +25,11 @@ struct RewardsView: View {
                             ForEach(badges.prefix(8)) { badge in
                                 HStack {
                                     Image(systemName: "rosette")
+<<<<<<< HEAD
                                         .foregroundColor(.accent)
+=======
+                                        .foregroundColor(.primary)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                                     Text(badge.title)
                                         .foregroundColor(.textPrimary)
                                     Spacer()
@@ -65,12 +69,20 @@ private struct PointsChart: View {
                     x: .value("Day", p.day, unit: .day),
                     y: .value("Points", p.points)
                 )
+<<<<<<< HEAD
                 .foregroundStyle(Color.accent)
+=======
+                .foregroundStyle(Color.primary)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                 PointMark(
                     x: .value("Day", p.day, unit: .day),
                     y: .value("Points", p.points)
                 )
+<<<<<<< HEAD
                 .foregroundStyle(Color.accent)
+=======
+                .foregroundStyle(Color.primary)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
             }
             .frame(height: 160)
         }

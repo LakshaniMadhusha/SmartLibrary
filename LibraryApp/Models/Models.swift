@@ -11,6 +11,7 @@ final class AppUser: Identifiable {
     @Attribute(.unique) var id: UUID
     var name: String
     var email: String
+<<<<<<< HEAD
     var password: String // Mandatory DB parameter
     var roleRaw: String
     var isBiometricEnabled: Bool
@@ -32,6 +33,18 @@ final class AppUser: Identifiable {
         self.membershipId = membershipId
         self.phoneNumber = phoneNumber
         self.address = address
+=======
+    var roleRaw: String
+    var isBiometricEnabled: Bool
+    var createdAt: Date
+
+    init(id: UUID = UUID(), name: String, email: String, role: UserRole, isBiometricEnabled: Bool = false, createdAt: Date = .now) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.roleRaw = role.rawValue
+        self.isBiometricEnabled = isBiometricEnabled
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
         self.createdAt = createdAt
     }
 

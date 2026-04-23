@@ -16,6 +16,7 @@ struct AddBookView: View {
                 TextField("Author", text: $author).inputStyle()
                 TextField("Genre", text: $genre).inputStyle()
 
+<<<<<<< HEAD
                 Button("Add Book") {
                     let book = Book(title: title, author: author, genre: genre, status: .available, rating: 0)
                     modelContext.insert(book)
@@ -24,6 +25,12 @@ struct AddBookView: View {
                     // Push simultaneously to the Firebase Cloud via our new Daemon Engine!
                     FirebaseSyncService.shared.pushBookToCloud(book)
                     
+=======
+                Button("Add") {
+                    let book = Book(title: title, author: author, genre: genre, status: .available, rating: 0)
+                    modelContext.insert(book)
+                    try? modelContext.save()
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
                     dismiss()
                 }
                 .buttonStyle(.primaryButton)

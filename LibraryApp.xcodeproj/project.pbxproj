@@ -6,11 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+<<<<<<< HEAD
 /* Begin PBXBuildFile section */
 		5DF6DB0C59707AF54400BB3A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 36D9B3A821BE2960C8FE0229 /* FirebaseFirestore */; };
 		EAE3F6582C3654D5FA4A4971 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 67F707E4411A7481B5EA2ADD /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 /* Begin PBXFileReference section */
 		7FAFAE352F963EB8002CD2F0 /* LibraryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -28,8 +31,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				EAE3F6582C3654D5FA4A4971 /* FirebaseAuth in Frameworks */,
 				5DF6DB0C59707AF54400BB3A /* FirebaseFirestore in Frameworks */,
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +78,11 @@
 			);
 			name = LibraryApp;
 			packageProductDependencies = (
+<<<<<<< HEAD
 				67F707E4411A7481B5EA2ADD /* FirebaseAuth */,
 				36D9B3A821BE2960C8FE0229 /* FirebaseFirestore */,
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 			);
 			productName = LibraryApp;
 			productReference = 7FAFAE352F963EB8002CD2F0 /* LibraryApp.app */;
@@ -103,9 +112,12 @@
 			);
 			mainGroup = 7FAFAE2C2F963EB8002CD2F0;
 			minimizedProjectReferenceProxies = 1;
+<<<<<<< HEAD
 			packageReferences = (
 				9791B8EE3C2DA8A5C36FE9EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7FAFAE362F963EB8002CD2F0 /* Products */;
 			projectDirPath = "";
@@ -265,8 +277,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+<<<<<<< HEAD
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for Siri Voice commands.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Voice recognition is required for custom search.";
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -298,8 +313,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+<<<<<<< HEAD
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required for Siri Voice commands.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Voice recognition is required for custom search.";
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +362,7 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+<<<<<<< HEAD
 
 /* Begin XCRemoteSwiftPackageReference section */
 		9791B8EE3C2DA8A5C36FE9EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -368,6 +387,8 @@
 			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
+=======
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 	};
 	rootObject = 7FAFAE2D2F963EB8002CD2F0 /* Project object */;
 }

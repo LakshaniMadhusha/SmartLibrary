@@ -11,7 +11,11 @@ private struct InputModifier: ViewModifier {
             .cornerRadius(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
+<<<<<<< HEAD
                     .stroke(isFocused ? Color.accent : Color.clear, lineWidth: 1.5)
+=======
+                    .stroke(isFocused ? Color.primary : Color.clear, lineWidth: 1.5)
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
             )
             .focused($isFocused)
     }

@@ -1,6 +1,7 @@
 import SwiftUI
 
 extension Color {
+<<<<<<< HEAD
     // Dynamic Colors for perfect iOS support
     static let pageBg = Color(UIColor { traitCollection in
         traitCollection.userInterfaceStyle == .dark ? UIColor(Color(hex: "1E1E1E")) : UIColor(Color(hex: "F7F5FF"))
@@ -32,6 +33,18 @@ extension Color {
     static let textPrimary   = Color(UIColor { tc in tc.userInterfaceStyle == .dark ? UIColor(Color(hex: "FFFFFF")) : UIColor(Color(hex: "1A1A2E")) })
     static let textSecondary = Color(UIColor { tc in tc.userInterfaceStyle == .dark ? UIColor(Color(hex: "A3A3A9")) : UIColor(Color(hex: "6B6B8A")) })
     static let divider       = Color(UIColor { tc in tc.userInterfaceStyle == .dark ? UIColor(Color(hex: "3A3A3D")) : UIColor(Color(hex: "E4E2F5")) })
+=======
+    static let pageBg        = Color(hex: "F7F5FF")  // soft lavender-white
+    static let cardBg        = Color(hex: "FFFFFF")
+    static let surfaceBg     = Color(hex: "EEF0FB")  // chip and input fills
+    static let primary       = Color(hex: "6C63FF")  // purple — CTAs, active state
+    static let coral         = Color(hex: "FF6584")  // error, overdue, highlights
+    static let teal          = Color(hex: "2DBD9B")  // success, available
+    static let amber         = Color(hex: "FFB347")  // warning, reserved
+    static let textPrimary   = Color(hex: "1A1A2E")
+    static let textSecondary = Color(hex: "6B6B8A")
+    static let divider       = Color(hex: "E4E2F5")
+>>>>>>> 50886afbd0b6837a06f6b0447ec8609636c51896
 
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet(charactersIn: "#"))
